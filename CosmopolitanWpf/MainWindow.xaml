@@ -1,0 +1,56 @@
+﻿<Window x:Class="CosmopolitanWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cosmopolitan Theme for WPF"
+        WindowState="Maximized"
+        WindowStartupLocation="CenterScreen">
+    <Grid x:Name="LayoutRoot"
+          Style="{StaticResource LayoutRootGridStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border x:Name="BackgroundBorder"
+                Style="{StaticResource ContentBorderStyle}"
+                Grid.RowSpan="3" />
+
+        <Border x:Name="BrandingBorder"
+                Style="{StaticResource NavBrandingBorderStyle}">
+            <StackPanel x:Name="BrandingStackPanel"
+                        Style="{StaticResource BrandingStackPanelStyle}">
+                <ContentControl Style="{StaticResource LogoIcon}" />
+                <TextBlock x:Name="ApplicationNameTextBlock"
+                           Style="{StaticResource ApplicationNameStyle}"
+                           Text="Application Name" />
+            </StackPanel>
+        </Border>
+
+        <Border x:Name="LinksBorder"
+                Style="{StaticResource NavLinksBorderStyle}">
+            <StackPanel x:Name="LinksStackPanel"
+                        Style="{StaticResource LinksStackPanelStyle}">
+                <ToggleButton x:Name="ButtonHome"
+                              Style="{StaticResource LinkStyle}"
+                              Content="home"
+                              Click="ButtonHome_Click" />
+                <ToggleButton  x:Name="ButtonCore"
+                               Style="{StaticResource LinkStyle}"
+                               Content="core controls"
+                               Click="ButtonCore_Click" />
+                <ToggleButton x:Name="ButtonSDK"
+                              Style="{StaticResource LinkStyle}"
+                              Content="sdk controls"
+                              Click="ButtonSDK_Click" />
+            </StackPanel>
+        </Border>
+
+        <Border x:Name="ContentBorder"
+                Grid.Row="1"
+                Margin="95,50,0,0">
+            <ContentControl x:Name="ContentFrame"
+                            Margin="0,0,20,0" />
+        </Border>
+    </Grid>
+</Window>
